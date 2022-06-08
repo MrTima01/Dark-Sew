@@ -1,109 +1,48 @@
-let DataPack = require('sew-queen-pro');
+           case 'cmd': case 'menu': case 'help': case '?': {
+            	timestampe = speed();
+latensie = speed() - timestampe
+                anu = ``
+const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+                    templateMessage: {
+                        hydratedTemplate: {
+                            hydratedContentText: anu,
+                            locationMessage: {
+                            hydratedFooterText: `Hi 🤚 ${pushname}
+❏「 DARK MAX 」
+𝗦𝗽𝗲𝗲𝗱 : ${latensie.toFixed(4)} miliseconds
+*DEVELOPER : MR.TIMA*
+*NEW SPEED VERSION..SELECT YOUR COMMAND LIST*
 
-let SewQueen = require('sew-queen-pro/sources/dc/handler');
-let Details = require('sew-queen-pro/sources/dc/Details');
-let {sendMessageAllMenupv,sendMessageAllMenupb, sendMessageonemenupv,sendMessageonemenupb } = require('sew-queen-pro/sources/dc/cmd/menu')
-let WorkType = Details.WORKTYPE == 'public' ? false : true
-SewQueen['IntroduceCMD']({
-        pattern: 'help ?(.*)', 
-        fromMe: false, 
-        dontAdCommandList: true,
-        }, 
-(async (QueenSew,input) => { 
- if(Details.WORKTYPE !== 'public') return;
-await sendMessageAllMenupb(QueenSew,input)
-})); 
-SewQueen['IntroduceCMD']({
-        pattern: 'help ?(.*)', 
-        fromMe: true, 
-        dontAdCommandList: true,
-        }, 
-(async (QueenSew,input) => { 
-await sendMessageAllMenupv(QueenSew,input)
-})); 
-SewQueen['IntroduceCMD']({
-        pattern: 'list ?(.*)', 
-        fromMe: false, 
-        dontAdCommandList: true,
-        }, 
-(async (QueenSew,input) => { 
- if(Details.WORKTYPE !== 'public') return;
-await sendMessageAllMenupb(QueenSew,input)
-})); 
-SewQueen['IntroduceCMD']({
-        pattern: 'list ?(.*)', 
-        fromMe: true, 
-        dontAdCommandList: true,
-        }, 
-(async (QueenSew,input) => { 
-await sendMessageAllMenupv(QueenSew,input)
-})); 
-SewQueen['IntroduceCMD']({
-        pattern: 'cmd ?(.*)', 
-        fromMe: false, 
-        dontAdCommandList: true,
-        }, 
-(async (QueenSew,input) => { 
- if(Details.WORKTYPE !== 'public') return;
-await sendMessageAllMenupb(QueenSew,input)
-})); 
-SewQueen['IntroduceCMD']({
-        pattern: 'cmd ?(.*)', 
-        fromMe: true, 
-        dontAdCommandList: true,
-        }, 
-(async (QueenSew,input) => { 
-await sendMessageAllMenupv(QueenSew,input)
-})); 
-SewQueen['IntroduceCMD']({
-        pattern: 'මෙනු ?(.*)', 
-        fromMe: false, 
-        dontAdCommandList: true,
-        }, 
-(async (QueenSew,input) => { 
- if(Details.WORKTYPE !== 'public') return;
-await sendMessageAllMenupb(QueenSew,input)
-})); 
-SewQueen['IntroduceCMD']({
-        pattern: 'මෙනු ?(.*)', 
-        fromMe: true, 
-        dontAdCommandList: true,
-        }, 
-(async (QueenSew,input) => { 
-await sendMessageAllMenupv(QueenSew,input)
-})); 
-SewQueen['IntroduceCMD']({
-        pattern: 'menu ?(.*)', 
-        fromMe: false, 
-        dontAdCommandList: true,
-        }, 
-(async (QueenSew,input) => { 
- if(Details.WORKTYPE !== 'public') return;
-await sendMessageAllMenupb(QueenSew,input)
-})); 
-SewQueen['IntroduceCMD']({
-        pattern: 'menu ?(.*)', 
-        fromMe: true, 
-        dontAdCommandList: true,
-        }, 
-(async (QueenSew,input) => { 
-await sendMessageAllMenupv(QueenSew,input)
-})); 
-SewQueen['IntroduceCMD']({
-        pattern: 'letcmd ?(.*)', 
-        fromMe: false, 
-        dontAdCommandList: true,
-        }, 
-(async (QueenSew,input) => { 
- if(Details.WORKTYPE !== 'public') return;
-await sendMessageonemenupb(QueenSew,input)
-})); 
-
-SewQueen['IntroduceCMD']({
-        pattern: 'letcmd ?(.*)', 
-        fromMe: true, 
-        dontAdCommandList: true,
-        }, 
-(async (QueenSew,input) => { 
-await sendMessageonemenupv(QueenSew,input)
-})); 
+Please Select Your Commands
+`,
+                            hydratedButtons: [{
+                                urlButton: {
+                                    displayText: 'MR.TIMA',
+                                    url: 'wa.me/94715264791'
+                                }
+                            }, {
+                            	urlButton: {
+                                displayText: 'GITHUB',
+                                    url: 'https://github.com/'
+                                }
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'RATE US',
+                                    id: `${prefix}rate`
+                                }
+                                }, {
+                                quickReplyButton: {
+                                    displayText: 'COMMANDS',
+                                    id: `${prefix}command`
+                                }
+                                }, {
+                                quickReplyButton: {
+                                    displayText: 'ABOUT DARK MAX BOT',
+                                    id: `${prefix}about`
+                                }
+                            }]
+                        }
+                    }
+                }), { userJid: m.chat })
+                XeonBotInc.relayMessage(m.chat, template.message, { messageId: template.key.id })
+                }
