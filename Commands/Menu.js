@@ -1,4 +1,10 @@
-           case 'cmd': case 'menu': case 'help': case '?': {
+/*
+CODE OWNERS #Mr.Tima, XeonDT, Ravindu Manoj
+
+*/
+
+
+ case 'sew': case 'SEW': case 'cmd': case '.': {
             	timestampe = speed();
 latensie = speed() - timestampe
                 anu = ``
@@ -7,22 +13,26 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                         hydratedTemplate: {
                             hydratedContentText: anu,
                             locationMessage: {
-                            hydratedFooterText: `Hi 🤚 ${pushname}
-❏「 DARK MAX 」
-𝗦𝗽𝗲𝗲𝗱 : ${latensie.toFixed(4)} miliseconds
-*DEVELOPER : MR.TIMA*
-*NEW SPEED VERSION..SELECT YOUR COMMAND LIST*
+                            jpegThumbnail: fs.readFileSync('')},
+                            hydratedFooterText: `HELLO ${pushname}
+❏「 *DARK SEW MENU* 」
+𝗦𝗽𝗲𝗲𝗱 : ${latensie.toFixed(2)} miliseconds
+𝗥𝘂𝗻𝘁𝗶𝗺𝗲 : ${runtime(process.uptime())}
+𝗕𝗼𝘁 𝗡𝗮𝗺𝗲 : ${global.botnma}
+𝗢𝘄𝗻𝗲𝗿 𝗡𝗮𝗺𝗲 : ${global.ownernma}
+𝗢𝘄𝗻𝗲𝗿 𝗡𝘂𝗺𝗯𝗲𝗿 : ${global.owner}
+*DARK SEW MENU*
 
-Please Select Your Commands
+SELECT YOUR BUTTON BELLOW
 `,
                             hydratedButtons: [{
                                 urlButton: {
-                                    displayText: 'MR.TIMA',
-                                    url: 'wa.me/94715264791'
+                                    displayText: '#RAVINU MANOJ',
+                                    url: 'wa.me/94'
                                 }
                             }, {
                             	urlButton: {
-                                displayText: 'GITHUB',
+                                displayText: 'Github',
                                     url: 'https://github.com/'
                                 }
                             }, {
@@ -37,12 +47,12 @@ Please Select Your Commands
                                 }
                                 }, {
                                 quickReplyButton: {
-                                    displayText: 'ABOUT DARK MAX BOT',
-                                    id: `${prefix}about`
+                                    displayText: 'DARK SEW',
+                                    id: `${prefix}dscmd`
                                 }
                             }]
                         }
                     }
                 }), { userJid: m.chat })
-                XeonBotInc.relayMessage(m.chat, template.message, { messageId: template.key.id })
+                darksew.relayMessage(m.chat, template.message, { messageId: template.key.id })
                 }
